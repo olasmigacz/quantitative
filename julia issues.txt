@@ -1,0 +1,72 @@
+Last login: Sun Dec  8 17:55:25 on ttys001
+Samsung@MacBook-Air ~ % julia
+zsh: command not found: julia
+Samsung@MacBook-Air ~ % julia
+zsh: command not found: julia
+Samsung@MacBook-Air ~ % /Applications/Julia-x.x.app/Contents/Resources/julia/bin/julia
+
+zsh: no such file or directory: /Applications/Julia-x.x.app/Contents/Resources/julia/bin/julia
+Samsung@MacBook-Air ~ % /Applications/Julia-1.11.app/Contents/Resources/julia/bin/julia
+
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.11.2 (2024-12-01)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> nano ~/.zshrc
+
+ERROR: ParseError:
+# Error @ REPL[1]:1:7
+nano ~/.zshrc
+#     ╙ ── not a unary operator
+Stacktrace:
+ [1] top-level scope
+   @ none:1
+
+julia> export PATH="/Applications/Julia-x.x.app/Contents/Resources/julia/bin:$PATH"
+ERROR: syntax: invalid assignment location "export PATH" around REPL[2]:1
+Stacktrace:
+ [1] top-level scope
+   @ REPL[2]:1
+
+julia> 
+
+julia> exit()
+Samsung@MacBook-Air ~ % nano ~/.zshrc
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09              File: /Users/Samsung/.zshrc               Modified  
+
+export PATH="/Applications/Julia-1.11.app/Contents/Resources/julia/bin:$PATH"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
