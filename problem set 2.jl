@@ -198,5 +198,3 @@ end
 plot_cost_function_and_demand(0.5, [0.25, 1, 4], 1.0, 1.0)
 
 
-
-.
