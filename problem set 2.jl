@@ -14,24 +14,20 @@ function iterative_solver(f, x0, α; ϵ=1e-6, maxiter=1000)
     xn = x0 
 
     for i in 1:maxiter
-        # Define g(x) = f(x) + x
         g_x = f(xn) + xn  
-        # Update using dampened method
         xn_plus1 = (1 - α) * g_x + α * xn  
-        # Compute residual
+
         residual = abs(xn_plus1 - xn)
         
-        # Store the results
         push!(x_vals, xn_plus1)
         push!(residuals, residual)
         
-        # Check convergence
         if residual / (1 + abs(xn)) < ϵ
-            flag = 0  # Solution found
+            flag = 0 
             break
         end
         
-        xn = xn_plus1  # Update for next iteration
+        xn = xn_plus1  
     end
 
     g_x = f(xn) + xn 
