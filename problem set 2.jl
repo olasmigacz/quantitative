@@ -7,12 +7,12 @@ using Plots
 #Problem 1
 
 function iterative_solver(f, x0, α; ϵ=1e-6, maxiter=1000)
-    
+
     x_vals = [x0]  
     residuals = Float64[]  
     flag = 1  
     xn = x0 
-    
+
     for i in 1:maxiter
         # Define g(x) = f(x) + x
         g_x = f(xn) + xn  
@@ -33,9 +33,9 @@ function iterative_solver(f, x0, α; ϵ=1e-6, maxiter=1000)
         
         xn = xn_plus1  # Update for next iteration
     end
-    
+
     g_x = f(xn) + xn 
-    
+
     solution = xn
     f_value = f(solution)
     abs_diff = abs(solution - g_x)
@@ -47,17 +47,17 @@ end
 f(x) = (x + 1)^(1/3) - x
 
 # initial guess
-x0 = 1.0  # Make sure x0 is a float
+x0 = 1.0 
 α = 0.5
 
 result = iterative_solver(f, x0, α)
 
-println("Flag: ", result[1])          # 0 means solution found
-println("Solution: ", result[2])      # The solution (root)
-println("f(Solution): ", result[3])   # Value of f at the solution
-println("Absolute Difference: ", result[4])  # Absolute difference between solution and g(x)
-println("x values: ", result[5])      # All x values
-println("Residuals: ", result[6])     # All residuals
+println("Flag: ", result[1])         
+println("Solution: ", result[2])      
+println("f(Solution): ", result[3])   
+println("Absolute Difference: ", result[4]) 
+println("x values: ", result[5])      
+println("Residuals: ", result[6])    
 
 
 #Problem 2
@@ -200,3 +200,7 @@ function plot_cost_function_and_demand(α, sigma_values, w2, y)
 end
 
 plot_cost_function_and_demand(0.5, [0.25, 1, 4], 1.0, 1.0)
+
+
+
+.
